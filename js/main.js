@@ -10,10 +10,9 @@
   var max = Array.max(testData);
   
   var colorsets = [
-    ['#EDF8B1', '#7FCDBB', '#2C7FB8'],
-    ['#F7E1C5', '#6A000B'],
     ['#21313E', '#EFEE69'],
-    ['#CCFF33', '#3366FF']
+    ['#CCFF33', '#3366FF'],
+    ['#743C3E', '#D7A24E']
   ];
   
   // Make color space
@@ -72,10 +71,10 @@
   
   
   $(document).ready(function() {
-    makeSteps(colorsets[3]);
+    makeSteps(colorsets[0]);
   
     $('.color-set').click(function(e) {
-      e.preventDefault;
+      e.preventDefault();
       makeSteps(colorsets[parseInt($(this).data('set'))]);
     })
   });
