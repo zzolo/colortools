@@ -2,6 +2,11 @@
  * CSS for Color Tools
  */
 
+a,
+a:visited {
+  color: rgb(0, 0, 238);
+}
+
 .main-container {
   width: 75%;
   margin: 0 auto;

@@ -15,31 +15,34 @@
     ['#743C3E', '#D7A24E']
   ];
   
+  var colorset = 0;
+  var colorsteps = 5;
+  
   // Make color space
-  var makeSpace = function(colorset, steps) {
+  var makeSpace = function(cs, steps) {
     return {
       rgb: new chroma.ColorScale({
-  			colors: colorset,
+  			colors: cs,
   			limits: chroma.limits(testData, 'equal', steps),
         mode: 'rgb'
       }),
       hsv: new chroma.ColorScale({
-  			colors: colorset,
+  			colors: cs,
   			limits: chroma.limits(testData, 'equal', steps),
         mode: 'hsv'
       }),
       hcl: new chroma.ColorScale({
-  			colors: colorset,
+  			colors: cs,
   			limits: chroma.limits(testData, 'equal', steps),
         mode: 'hcl'
       }),
       hsi: new chroma.ColorScale({
-  			colors: colorset,
+  			colors: cs,
   			limits: chroma.limits(testData, 'equal', steps),
         mode: 'hsi'
       }),
       lab: new chroma.ColorScale({
-  			colors: colorset,
+  			colors: cs,
   			limits: chroma.limits(testData, 'equal', steps),
         mode: 'lab'
       })
@@ -62,8 +65,10 @@
   };
   
   // Fill in spaces
-  var makeSteps = function(colorset) {
-    var cSpace = makeSpace(colorset, 7);
+  var makeSteps = function() {
+    // Use global variables to change easily with clicks
+  
+    var cSpace = makeSpace(colorsets[colorset], colorsteps);
     for (var c in cSpace) {
       showScale($('.color-space.' + c), cSpace[c]);
     };
@@ -71,11 +76,17 @@
   
   
   $(document).ready(function() {
-    makeSteps(colorsets[0]);
+    makeSteps();
   
     $('.color-set').click(function(e) {
       e.preventDefault();
-      makeSteps(colorsets[parseInt($(this).data('set'))]);
+      colorset = parseInt($(this).data('set'));
+      makeSteps();
+    });
+    $('.color-steps').click(function(e) {
+      e.preventDefault();
+      colorsteps = parseInt($(this).data('steps'));
+      makeSteps();
     })
   });
   
