@@ -14,6 +14,7 @@
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/table.css">
   <link rel="stylesheet" href="css/ct.css">
   
   <script src="js/vendor/modernizr-2.6.2.min.js"></script>
@@ -29,32 +30,46 @@
     <p>My very basic understanding of colors.</p>
     
     <h2>Color spaces</h2>
-    <p>An algorithm or model that describes colors given a value in that model.</p>
+    <p>An algorithm or model that describes colors given a value in that model.  The following are "equal" steps across two colors using different color spaces.</p>
     
-    <h3>RGB (Red, Green, Blue)</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Color Space</th>
+          <th>Colors 
+            <a href="#" class="color-set" data-set="2">[2]</a>
+            <a href="#" class="color-set" data-set="3">[3]</a>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>RGB</strong> (Red, Green, Blue)</td>
+          <td><div class="color-space rgb clearfix"></div></td>
+        </tr>
+        
+        <tr>
+          <td><strong>HSV</strong> (Hue, Saturation, Value/Brightness)</td>
+          <td><div class="color-space hsv clearfix"></div></td>
+        </tr>
+        
+        <tr>
+          <td><strong>HSI</strong> (Hue, Saturation, Intensity)</td>
+          <td><div class="color-space hsi clearfix"></div></td>
+        </tr>
+        
+        <tr>
+          <td><strong>HCL</strong> (Hue, Chroma, Luminance)</td>
+          <td><div class="color-space hcl clearfix"></div></td>
+        </tr>
+        
+        <tr>
+          <td><strong>LAB</strong> (Lightness, a, b) (aka CIELAB)</td>
+          <td><div class="color-space lab clearfix"></div></td>
+        </tr>
+      </tbody>
+    </table>
     
-    <div class="color-space rgb clearfix">
-    </div>
-    
-    <h3>HSV (Hue, Saturation, Value/Brightness)</h3>
-    
-    <div class="color-space hsv clearfix">
-    </div>
-    
-    <h3>HSI (Hue, Saturation, Intensity)</h3>
-    
-    <div class="color-space hsi clearfix">
-    </div>
-    
-    <h3>HCL (Hue, Chroma, Luminance)</h3>
-    
-    <div class="color-space hcl clearfix">
-    </div>
-    
-    <h3>LAB (Lightness, a, b) (aka CIELAB)</h3>
-    
-    <div class="color-space lab clearfix">
-    </div>
     
   
     <h1>Color tools</h1>
