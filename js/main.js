@@ -12,7 +12,8 @@
   var colorsets = [
     ['#21313E', '#EFEE69'],
     ['#CCFF33', '#3366FF'],
-    ['#743C3E', '#D7A24E']
+    ['#743C3E', '#D7A24E'],
+    ['#FC8D59', 'FFFFBF', '91CF60']
   ];
   
   var colorset = 0;
@@ -51,7 +52,6 @@
   
   // Function for making scale
   var showScale = function($container, colorSpace) {
-    var w = 600;
     var num = 340;
     var pw, i, v, col;
     
@@ -87,7 +87,19 @@
       e.preventDefault();
       colorsteps = parseInt($(this).data('steps'));
       makeSteps();
-    })
+    });
+    
+    var $lis = $('ul li');
+    var liSpace = makeSpace(colorsets[3], $lis.length).hcl;
+    var liCount = 0;
+    $lis.each(function() {
+      var v = liCount / ($lis.length - 1) * (max - min) + min;
+      var $block = $('<span>■ </span>').addClass('li-block')
+        .css('color', liSpace.getColor(v));
+      
+      $(this).prepend($block);
+      liCount++;
+    });
   });
   
 })(jQuery, window);

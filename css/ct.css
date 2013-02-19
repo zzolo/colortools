@@ -2,9 +2,37 @@
  * CSS for Color Tools
  */
 
+body {
+  font-weight: 300;
+}
+
 a,
 a:visited {
-  color: rgb(0, 0, 238);
+  color: #222222;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+a:hover,
+a:visited:hover {
+  text-decoration: underline;
+}
+
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 1em;
+}
+ul li {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+ul li .li-block {
+  margin-right: .5em;
+  font-size: 150%;
+  line-height: 1em;
 }
 
 .main-container {
