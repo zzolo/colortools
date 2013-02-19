@@ -6,3 +6,9 @@
   width: 75%;
   margin: 0 auto;
 }
+
+.color-space .b {
+  width: 1px;
+  height: 3em;
+  float: left;
+}
